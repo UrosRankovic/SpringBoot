@@ -39,7 +39,6 @@ public class Student {
         this.dob = dob;
         this.age = age;
     }
-
     public int getId() {
         return id;
     }
@@ -90,4 +89,8 @@ public class Student {
                 ", age=" + age +
                 '}';
     }
+    public int testFunction(){
+        return 0;
+    }
+
 }
