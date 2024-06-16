@@ -1,18 +1,20 @@
 package com.example.demo.student;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.util.List;
 @Service
 public class StudentService {
-        public List<Student> displayStudent() {
-            return List.of(new  Student(
-                    1, "Mariam",
-                    "test@gmail.com",
-                    LocalDate.of(2000,10,10),
-                    25
-            )
-            );
-        }
+    private final StudentRepository studentRepository;
+@Autowired
+    public StudentService(StudentRepository studentRepository) {
+        this.studentRepository = studentRepository;
+    }
+
+    public List<Student> displayStudent() {
+        List<Student> students = studentRepository.findAll();
+        return students.isEmpty() ? null : students;
+    }
 }
