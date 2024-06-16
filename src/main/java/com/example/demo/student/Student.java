@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 
 import java.time.LocalDate;
 @Entity
-@Table
+@Table(name = "student")
 public class Student {
     @Id
     @SequenceGenerator(
@@ -16,8 +16,8 @@ public class Student {
             strategy = GenerationType.SEQUENCE,
             generator = "student_sequence"
     )
-
     private int id;
+
     private String name;
     private String email;
     private LocalDate dob;
@@ -89,4 +89,6 @@ public class Student {
                 ", age=" + age +
                 '}';
     }
+
+
 }
