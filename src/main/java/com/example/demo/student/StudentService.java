@@ -16,10 +16,16 @@ public class StudentService {
         this.studentRepository = studentRepository;
     }
 
-    public List<Student> displayStudent() {
+    @Transactional
+    public String displayStudents() {
         List<Student> students = studentRepository.findAll();
-        return students.isEmpty() ? null : students;
+
+            for (Student student : students) {
+                return (student.getName());
+            }
+        return ("End of student display");
     }
+
 
     public void addNewStudent(Student student) {
         Optional<Student> studentByEmail = studentRepository.findStudentByEmail(student.getEmail());
