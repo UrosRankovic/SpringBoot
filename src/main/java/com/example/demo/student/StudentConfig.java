@@ -9,27 +9,26 @@ import java.time.Month;
 import java.util.List;
 
 import static java.time.Month.JANUARY;
+import static java.time.Month.JULY;
 
 @Configuration
 public class StudentConfig {
-    @Bean
-    CommandLineRunner commandLineRunner(StudentRepository repository){
-        return args -> {
-            Student mariam = new Student(
-                    "Mariam",
-                    "test@gmail.com",
-                    LocalDate.of(2000, JANUARY, 5),
-                    21
-            );
-            Student luke = new Student(
-                    "Luke",
-                    "test@gmail.com",
-                    LocalDate.of(2000, JANUARY, 5),
-                    21
-            );
-            repository.saveAll(
-                    List.of(mariam,luke)
-            );
-        };
-    }
+//    @Bean
+//    CommandLineRunner commandLineRunner(StudentRepository repository){
+//        return args -> {
+//            Student mariam = new Student(
+//                    "Mariam",
+//                    "test@gmail.com",
+//                    LocalDate.of(2000, JANUARY, 5)
+//            );
+//            Student luke = new Student(
+//                    "Luke",
+//                    "test@gmail.com",
+//                    LocalDate.of(2000, JULY, 5)
+//            );
+//            repository.saveAll(
+//                    List.of(mariam,luke)
+//            );
+//        };
+//    }
 }
